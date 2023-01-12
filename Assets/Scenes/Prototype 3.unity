@@ -488,6 +488,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -203.1
       objectReference: {fileID: 0}
+    - target: {fileID: 219429699868843521, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
+      propertyPath: jumpForce
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 219429699868843521, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
+      propertyPath: gravityModifier
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511284238387059939, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
+      propertyPath: m_Mass
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1511284238387059939, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       propertyPath: m_Constraints
       value: 90
