@@ -35,32 +35,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             dirtParticle.Stop();
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up *jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
+            playerAudio.PlayOneShot(jumpSound, 0.7f);
 
 
         }
     }
-
     
     private void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            dirtParticle.Play();
             isOnGround = true;
-            
-            playerAudio.PlayOneShot(jumpSound, 0.7f);
-     
+            dirtParticle.Play();
         }
-
-
 
         else if (collision.gameObject.CompareTag("obstacle"))
         {
-            
             Debug.Log("Game over!!");
             gameOver = true;
             playerAnim.SetBool("Death_b", true);
@@ -68,7 +62,6 @@ public class PlayerController : MonoBehaviour
             explosionParticule.Play();
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
-            
         }
     }
     
@@ -77,11 +70,4 @@ public class PlayerController : MonoBehaviour
 
 }
 
-
-
-
-/*private void OnTriggerEnter(Collider other)
-    {
-        
-    }*/
 
